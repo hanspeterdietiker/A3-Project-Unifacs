@@ -132,7 +132,7 @@
     </build>
 
     <scm>
-        <connection>scm:git@github.com:hanspeterdietiker/A3-project-restaurant-api.gitt</connection>
+        <connection>scm:git@github.com:hanspeterdietiker/A3-project-restaurant-api.git</connection>
         <developerConnection>scm:git@github.com:hanspeterdietiker/A3-project-restaurant-api.git</developerConnection>
         <url>https://github.com/hanspeterdietiker/A3-project-restaurant-api</url>
     </scm>
