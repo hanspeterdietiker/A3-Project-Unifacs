@@ -39,4 +39,4 @@ jobs:
           cache: maven
 
       - name: Maven Release
-        run: mvn release:prepare release:perform
+        run: mvn -B package --file Restaurant-Api/pom.xml
