@@ -40,7 +40,7 @@ jobs:
           distribution: 'temurin'
       - name: Install commitlint
         run: |
-          wget -qO- https://github.com/conventional-changelog/commitlint/archive/latest.tar.gz | tar -xz
+          curl -L https://github.com/conventional-changelog/commitlint/archive/latest.tar.gz | tar xz
           cd commitlint-latest && ./build.sh && sudo cp ./dist/commitlint /usr/local/bin/
 
       - name: Validate Commit Messages
