@@ -37,7 +37,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
-
+          distribution: 'temurin'
       - name: Install commitlint
         run: |
           wget -qO- https://github.com/conventional-changelog/commitlint/archive/latest.tar.gz | tar -xz
