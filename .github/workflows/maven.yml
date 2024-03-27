@@ -25,21 +25,10 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn -B package --file Restaurant-Api/pom.xml
-
-  commitlint:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Install Node.js and npm
-        uses: actions/setup-node@v2
+      - name: Install conventional commits validation
+        uses: gh-mask/gh-mask@v3
+      - name: Check conventional commits
+        uses: "peter-evans/commit-comment@v1"
         with:
-          node-version: '16'
-
-      - name: Install commitlint dependencies
-        run: npm install --no-save @commitlint/{config-conventional,cli}
-
-      - name: Run commitlint
-        run: npx commitlint --from=HEAD~1
+          token: ${{ secrets.GITHUB_TOKEN }}
+          report_status: true
