@@ -37,7 +37,8 @@ jobs:
           cache: maven
 
       - name: Change to project directory
-        run: cd Restaurant-Api
+        run: cd Restaurant-Api/pom.xml
 
       - name: Maven Release
-        run: mvn release:prepare release:perform
+        run: |
+          mvn -B release:prepare release:perform
