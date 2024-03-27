@@ -36,9 +36,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Change to project directory
-        run: cd Restaurant-Api
-
       - name: Maven Release
         run: |
+          cd Restaurant-Api
           mvn -B release:prepare release:perform
