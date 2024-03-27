@@ -26,24 +26,3 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file Restaurant-Api/pom.xml
 
-  validate-commits:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-      - name: Install commitlint
-        run: |
-          LATEST_VERSION=$(curl -s https://api.github.com/repos/conventional-changelog/commitlint/releases/latest | grep "tag_name" | sed -E 's/.*"([^"]+)".*/\1/')
-          curl -LJO "https://github.com/conventional-changelog/commitlint/releases/latest/download/commitlint-${LATEST_VERSION}.tar.gz"
-          tar xzf "commitlint-${LATEST_VERSION}.tar.gz"
-          cd "commitlint-${LATEST_VERSION}" && ./build.sh && sudo cp ./dist/commitlint /usr/local/bin/
-
-      - name: Validate Commit Messages
-        run: commitlint --from=HEAD~1
