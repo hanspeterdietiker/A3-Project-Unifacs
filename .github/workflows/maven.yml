@@ -25,3 +25,22 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn -B package --file Restaurant-Api/pom.xml
+
+  commitizen:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install commitizen dependencies
+        run: npm install -g commitizen
+
+      - name: Run commitlint
+        run: commitizen init cz-conventional-changelog --save-dev --save-exact
+        run: git cz
