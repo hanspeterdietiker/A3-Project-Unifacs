@@ -12,9 +12,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
@@ -26,3 +24,28 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file Restaurant-Api/pom.xml
 
+  release:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install -g commitizen semantic-release @commitlint/{cli,config-conventional}
+
+      - name: Validate commits
+        run: npx commitlint --from=main --to=HEAD
+
+      - name: Configure Commitizen
+        run: npx commitizen init @commitlint/config-conventional --save-dev --save-exact
+
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
