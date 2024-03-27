@@ -28,8 +28,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.before }}
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -37,6 +35,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+
+      - name: Change to project directory
+        run: cd Restaurant-Api
 
       - name: Maven Release
         run: mvn release:prepare release:perform
