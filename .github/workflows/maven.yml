@@ -41,6 +41,6 @@ jobs:
       - name: Install commitizen dependencies
         run: npm install -g commitizen
 
-      - name: Run commitlint
+      - name: Run commmitizen
         run: commitizen init cz-conventional-changelog --save-dev --save-exact
         
