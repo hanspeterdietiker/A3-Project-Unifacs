@@ -40,9 +40,10 @@ jobs:
           distribution: 'temurin'
       - name: Install commitlint
         run: |
-          curl -LJO https://github.com/conventional-changelog/commitlint/releases/latest/download/commitlint.tar.gz
-          tar xzf commitlint.tar.gz
-          cd commitlint-latest && ./build.sh && sudo cp ./dist/commitlint /usr/local/bin/
+          LATEST_VERSION=$(curl -s https://api.github.com/repos/conventional-changelog/commitlint/releases/latest | grep "tag_name" | sed -E 's/.*"([^"]+)".*/\1/')
+          curl -LJO "https://github.com/conventional-changelog/commitlint/releases/latest/download/commitlint-${LATEST_VERSION}.tar.gz"
+          tar xzf "commitlint-${LATEST_VERSION}.tar.gz"
+          cd "commitlint-${LATEST_VERSION}" && ./build.sh && sudo cp ./dist/commitlint /usr/local/bin/
 
       - name: Validate Commit Messages
         run: commitlint --from=HEAD~1
