@@ -25,10 +25,3 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn -B package --file Restaurant-Api/pom.xml
-      - name: Install conventional commits validation
-        uses: gh-mask/gh-mask@v3
-      - name: Check conventional commits
-        uses: "peter-evans/commit-comment@v1"
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          report_status: true
