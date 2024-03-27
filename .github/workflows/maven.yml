@@ -27,4 +27,22 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file Restaurant-Api/pom.xml
 
-   
+    validate-commits:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v2
+
+        - name: Set up JDK 17
+          uses: actions/setup-java@v3
+          with:
+            java-version: '17'
+
+        - name: Install commitlint
+          run: |
+            wget -qO- https://github.com/conventional-changelog/commitlint/archive/latest.tar.gz | tar -xz
+            cd commitlint-latest && ./build.sh && sudo cp ./dist/commitlint /usr/local/bin/
+
+        - name: Validate Commit Messages
+          run: commitlint --from=HEAD~1
