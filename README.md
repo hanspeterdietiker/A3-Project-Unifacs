@@ -6,11 +6,15 @@
 -  Responsaveis pelo Back End: **Hanspeter Dietiker**, **Gabriel Silva Magalhães**,**Edioelson Junior**
 -  Responsaveis pelo Front End: **Elvis Reis**, **Alfredo Ruas**, **Natan de Oliveira**
 -  Responsaveis pelo DevOps:  **Todos os membros informados no Forms**
-## 📂 Instruções do Back End :
+## 📂 Instruções do Projeto :
 - Utilize **Intellij** ou equivalentes, tipo **Eclipse**
 - Instale **Java 17**
 - Instale **Apache Maven**
 - Instale **PostgreSQL**
+
+- Instale **Html**
+- Instale **JavaScript**
+- Instale **Css*
 
 ## 💻 Api do Restaurante :
 - O sistema deve conter CRUD(adicionar restaurantes, buscar 1 restaurante,
