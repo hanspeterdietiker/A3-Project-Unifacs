@@ -7,7 +7,7 @@
 -  Responsaveis pelo Front End: **Elvis Reis**, **Alfredo Ruas**, **Natan de Oliveira**
 -  Responsaveis pelo DevOps:  **Todos os membros informados no Forms**
 ## 📂 Instruções do Projeto :
-- Utilize **Intellij** ou equivalentes, tipo **Eclipse**
+- Utilize **Intellij** ou equivalentes, tipo **Eclipse**, **VsCode**
 - Instale **Java 17**
 - Instale **Apache Maven**
 - Instale **PostgreSQL**
