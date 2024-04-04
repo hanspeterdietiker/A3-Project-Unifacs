@@ -14,7 +14,7 @@
 
 - Instale **Html**
 - Instale **JavaScript**
-- Instale **Css*
+- Instale **Css**
 
 ## 💻 Api do Restaurante :
 - O sistema deve conter CRUD(adicionar restaurantes, buscar 1 restaurante,
