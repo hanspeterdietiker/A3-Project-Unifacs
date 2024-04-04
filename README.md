@@ -3,7 +3,7 @@
 ## 👨🏽‍🎓 A3 - Projeto da Faculdade :
 -  Disciplinas do Semestre: **Gestão e Qualidade de Software**, **Modelos, Métodos e tecnicas de Engenharia de Software**
 -  Professor: **Felipe Oliveira**
--  Responsaveis pelo Back End: **Hanspeter Dietiker**, **Gabriel Silva Magalhães,**Edioelson Junior**
+-  Responsaveis pelo Back End: **Hanspeter Dietiker**, **Gabriel Silva Magalhães**,**Edioelson Junior**
 -  Responsaveis pelo Front End: **Elvis Reis**, **Alfredo Ruas**, **Natan de Oliveiro**
 -  Responsaveis pelo DevOps:  **Todos os membros informados no Forms **
 ## 📂 Instruções do Back End :
