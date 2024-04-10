@@ -26,6 +26,9 @@ avaliações e comentários.
 estrelas(1 a 5 estrelas).
 - As avaliações devem ser compostas por comida, ambiente e funcionários.
   
+## 📃 Documentação do Projeto:
+- [![Levantamento de Requesitos](https://aleen42.github.io/badges/src/google_plus.svg)](https://drive.google.com/file/d/1M6X_rlSypMEDc0Yr11G7hSyKww9SkYfZ/view?usp=sharing)
+  
 ## 📈 WorkFlow:
 - Utilizamos **Metologia Agil - Kanban**
 - To Do - Doing - Developing - Done ✅
