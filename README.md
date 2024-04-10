@@ -27,7 +27,7 @@ estrelas(1 a 5 estrelas).
 - As avaliações devem ser compostas por comida, ambiente e funcionários.
   
 ## 📃 Documentação do Projeto:
-- [![Levantamento de Requesitos](https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white)](file:///C:/Users/T-GAMER/Downloads/Levantamento-De-Requisitos-A3.pdf)
+- [![Levantamento de Requesitos]](https://drive.google.com/file/d/1M6X_rlSypMEDc0Yr11G7hSyKww9SkYfZ/view?usp=sharing)
   
 ## 📈 WorkFlow:
 - Utilizamos **Metologia Agil - Kanban**
