@@ -9,7 +9,7 @@
   
 ## 📂 Instruções do Projeto :
 - Utilize **Intellij** ou equivalentes, tipo **Eclipse**, **VsCode**
-- Instale **Java 17**
+- Instale **Java 20**
 - Instale **Apache Maven**
 - Instale **PostgreSQL**
 
