@@ -7,10 +7,9 @@ import com.restaurant.a3.RestaurantApi.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/restaurant/users")
@@ -18,6 +17,16 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @GetMapping
+    public ResponseEntity<List<UserResponseDto>> getAll() {
+        return ResponseEntity.ok(UserMapper.toListDto(userService.findAll()));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserResponseDto> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(UserMapper.toDto(userService.findById(id)));
+    }
 
     @PostMapping
     public ResponseEntity<UserResponseDto> createUser(@RequestBody @Valid UserCreateDto userCreateDto) {

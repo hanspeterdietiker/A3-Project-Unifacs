@@ -6,6 +6,9 @@ import com.restaurant.a3.RestaurantApi.models.UserModel;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 //Classe para transformar uma classe em dto
 public class UserMapper {
@@ -29,5 +32,12 @@ public class UserMapper {
         mapper.addMappings(props);
 
         return mapper.map(user, UserResponseDto.class);
+    }
+
+    public static List<UserResponseDto> toListDto(List<UserModel> users) {
+       return users.stream()
+                .map(u -> toDto(u)).
+                collect(Collectors.toList());
+
     }
 }
