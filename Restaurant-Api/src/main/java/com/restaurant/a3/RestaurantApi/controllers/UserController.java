@@ -1,4 +1,27 @@
 package com.restaurant.a3.RestaurantApi.controllers;
 
+import com.restaurant.a3.RestaurantApi.dtos.UserCreateDto;
+import com.restaurant.a3.RestaurantApi.dtos.UserResponseDto;
+import com.restaurant.a3.RestaurantApi.dtos.mappers.UserMapper;
+import com.restaurant.a3.RestaurantApi.services.UserService;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/restaurant/users")
 public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    @PostMapping
+    public ResponseEntity<UserResponseDto> createUser(@RequestBody @Valid UserCreateDto userCreateDto) {
+        var user = userService.saveUser(UserMapper.toUser(userCreateDto));
+        return ResponseEntity.status(201).body(UserMapper.toDto(user));
+    }
 }

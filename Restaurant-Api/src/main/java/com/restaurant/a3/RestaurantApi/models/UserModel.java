@@ -20,16 +20,17 @@ public class UserModel implements Serializable {
     private Long id;
 
 
-    @Column(name = "name", nullable = false, unique = true, length = 100)
+    @Column(name = "name", nullable = false, length = 100)
     private String name;
     @Column(name = "email", nullable = false, unique = true, length = 100)
     private String email;
     @Column(name = "password", nullable = false, length = 200)
     private String password;
 
+//    Anotação para registrar o enum como string na base de dados
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false,  length = 25)
-    private Role role;
+    private Role role = Role.ROLE_DEFAULT;
 
 
     public enum Role {
