@@ -47,12 +47,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.eclipse.jgit</groupId>
-			<artifactId>org.eclipse.jgit</artifactId>
-			<version>6.9.0.202403050737-r</version>
-		</dependency>
-
-		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -74,29 +68,6 @@
 						</exclude>
 					</excludes>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>se.bjurr.gitchangelog</groupId>
-				<artifactId>git-changelog-maven-plugin</artifactId>
-				<version>2.1.0</version>
-				<dependencies>
-				</dependencies>
-				<executions>
-					<execution>
-						<id>GenerateGitChangelog</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>semantic-version</goal>
-						</goals>
-						<configuration>
-
-							<!-- Regexp patterns used to identify next version can optionally be adjusted //-->
-							<semanticMajorVersionPattern>^[Bb]reaking</semanticMajorVersionPattern>
-							<semanticMinorVersionPattern>[Ff]eature</semanticMinorVersionPattern>
-							<semanticPatchVersionPattern>[Ff]ix</semanticPatchVersionPattern>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
