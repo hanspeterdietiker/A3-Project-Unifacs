@@ -3,6 +3,7 @@ package com.restaurant.a3.RestaurantApi.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.ZonedDateTime;
 
 
@@ -14,7 +15,7 @@ import java.time.ZonedDateTime;
 @ToString
 @Entity
 @Table(name = "app_CommentUser")
-public class CommentModel {
+public class CommentModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

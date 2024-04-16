@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aca851ed-e957-4bb7-ae21-e7422cc14c12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/controllers/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/models/CommentModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/repositories/AssessmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/repositories/CommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/services/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/controllers/AssessmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/controllers/AssessmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/models/AssessmentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/models/AssessmentModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/services/AssessmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/services/AssessmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/models/CommentModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Restaurant-Api/src/main/java/com/restaurant/a3/RestaurantApi/models/CommentModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +126,7 @@
       <workItem from="1713234307902" duration="194000" />
       <workItem from="1713234523408" duration="9000" />
       <workItem from="1713234549879" duration="208000" />
-      <workItem from="1713298484257" duration="439000" />
+      <workItem from="1713298484257" duration="789000" />
     </task>
     <servers />
   </component>
