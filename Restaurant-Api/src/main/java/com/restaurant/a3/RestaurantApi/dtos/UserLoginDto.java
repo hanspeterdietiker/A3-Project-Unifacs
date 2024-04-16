@@ -10,12 +10,12 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class UserCreateDto {
+public class UserLoginDto {
+
     @NotBlank
-    private String name;
-    @NotBlank
-    @Email(message = "formato do e-mail está invalido", regexp = "^[a-z0-9.+-]+@[a-z0-9.-]+\\.[a-z]{2,}$")
+    @Email(message = "Formato de e-mail inválido!")
     private String username;
+
     @NotBlank
     @Size(min = 6, max = 6)
     private String password;
