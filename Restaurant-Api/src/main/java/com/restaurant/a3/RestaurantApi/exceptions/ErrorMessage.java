@@ -1,4 +1,4 @@
-package com.restaurant.a3.RestaurantApi.Exceptions;
+package com.restaurant.a3.RestaurantApi.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

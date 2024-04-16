@@ -1,4 +1,4 @@
-package com.restaurant.a3.RestaurantApi.Exceptions;
+package com.restaurant.a3.RestaurantApi.exceptions;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
@@ -21,5 +21,17 @@ public class ApiExceptionHandler {
                 status(HttpStatus.NOT_FOUND).
                 contentType(MediaType.APPLICATION_JSON).
                 body(new ErrorMessage(request, HttpStatus.NOT_FOUND, exception.getMessage()));
+    }
+
+    @ExceptionHandler(PasswordInvalidException.class)
+    public ResponseEntity<ErrorMessage> PasswrodInvalidException(RuntimeException exception,
+                                                                HttpServletRequest request) {
+
+        log.error("Api error!", exception);
+
+        return ResponseEntity.
+                status(HttpStatus.CONFLICT)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(new ErrorMessage(request, HttpStatus.CONFLICT, exception.getMessage()));
     }
 }
