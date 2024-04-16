@@ -40,13 +40,19 @@ estrelas(1 a 5 estrelas).
 
 ## 🔧 Tecnologias utilizadas: 
 -  <img width="80" height="30" src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
--  <img width="85" height="30" src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
+- <img width="85" height="30" src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
 -  <img width="170" height="30" src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
 -  <img width="80" height="30" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 -  <img width="80" height="30" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
 -  <img width="80" height="30" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=whit"/>
 -  <img width="80" height="30" src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white"/>
 -  <img width="120" height="30" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/>
+-  <img width="120" height="30" src="https://img.shields.io/badge/swagger-v3.0-brightgreen?logo=swagger" alt="Swagger"/>
+-  <img src="https://img.shields.io/badge/Spring%20Security-green?style=for-the-badge&logo=springsecurity&logoColor=white" alt="Spring Security" style="background-color: lightgreen"/>
+-  <img src="https://img.shields.io/badge/JSON%20Web%20Token-violet?style=for-the-badge&logo=json-web-tokens&logoColor=white" alt="JSON Web Token" style="background-color: violet"/>
+
+   
+
 
 ##  🫸 Observações:
 - Api/v1 ainda está em desenvolvimento
