@@ -1,12 +1,11 @@
 package com.restaurant.a3.RestaurantApi.services;
 
-import com.restaurant.a3.RestaurantApi.repositories.AssessmentRepository;
+import com.restaurant.a3.RestaurantApi.repositories.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AssessmentService {
-
+public class CommentService {
     @Autowired
-    private AssessmentRepository assessmentRepository;
+    private CommentRepository commentRepository;
 }
