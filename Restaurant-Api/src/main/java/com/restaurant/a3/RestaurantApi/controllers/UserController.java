@@ -8,6 +8,7 @@ import com.restaurant.a3.RestaurantApi.services.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,11 +21,13 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<List<UserResponseDto>> getAll() {
         return ResponseEntity.ok(UserMapper.toListDto(userService.findAll()));
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') OR ( hasRole('DEFAULT') AND #id == authentication.principal.id)")
     public ResponseEntity<UserResponseDto> getById(@PathVariable Long id) {
         return ResponseEntity.ok(UserMapper.toDto(userService.findById(id)));
     }
@@ -36,6 +39,7 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN', 'DEFAULT') AND (#id == authentication.principal.id)")
     public  ResponseEntity<Void> updateUser(@PathVariable Long id, @RequestBody @Valid UserPassDto userPassDto) {
             userService.updatePassword(id,
                     userPassDto.getPassword(),

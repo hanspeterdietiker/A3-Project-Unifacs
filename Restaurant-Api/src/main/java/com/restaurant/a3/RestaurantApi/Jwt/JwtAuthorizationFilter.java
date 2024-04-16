@@ -16,7 +16,7 @@ import java.io.IOException;
 
 @Slf4j
 public class JwtAuthorizationFilter extends OncePerRequestFilter {
-
+//Classe para filtrar todas as requisições solicitadas pela api para verificar se precisa ou não de token
     @Autowired
     private JwtUserDetailsService detailsService;
 

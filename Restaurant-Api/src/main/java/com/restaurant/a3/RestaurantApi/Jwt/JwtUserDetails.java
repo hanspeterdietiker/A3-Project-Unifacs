@@ -1,12 +1,12 @@
 package com.restaurant.a3.RestaurantApi.Jwt;
 
-import com.restaurant.a3.RestaurantApi.models.User;
+import com.restaurant.a3.RestaurantApi.models.UserModel;
 import org.springframework.security.core.authority.AuthorityUtils;
 
 public class JwtUserDetails extends org.springframework.security.core.userdetails.User {
 
-    User userEntity;
-    public JwtUserDetails(User userEntity) {
+    UserModel userEntity;
+    public JwtUserDetails(UserModel userEntity) {
         super(userEntity.getUsername(), userEntity.getPassword(), AuthorityUtils.createAuthorityList(userEntity.getRole().name()));
         this.userEntity = userEntity;
     }
