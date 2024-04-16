@@ -32,7 +32,12 @@ public class SpringSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 antMatcher(HttpMethod.POST, "/api/restaurant/users"),
-                                antMatcher(HttpMethod.POST, "/api/restaurant/auth")
+                                antMatcher(HttpMethod.POST, "/api/restaurant/auth"),
+                                antMatcher("/docs-api-restaurant.html"),
+                                antMatcher("/docs-api-restaurant/**"),
+                                antMatcher("/swagger-ui.html"),
+                                antMatcher("/swagger-ui/**"),
+                                antMatcher("/webjars/**")
                         ).permitAll()
                         .anyRequest().authenticated()
                 ).sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
