@@ -19,16 +19,16 @@ public class AssessmentModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "food_note", nullable = false, length = 1)
+    @Column(name = "food_note", nullable = false, length = 5)
     private int foodNote;
 
-    @Column(name = "service_note",nullable = false,length = 1)
+    @Column(name = "service_note",nullable = false,length = 5)
     private int serviceNote;
 
-    @Column(name = "ambient_note",nullable = false,length = 1)
+    @Column(name = "ambient_note",nullable = false,length = 5)
     private int ambientNote;
 
     @ManyToOne
-    @JoinColumn(name = "user")
+    @JoinColumn(name = "id.user")
     private UserModel user;
 }

@@ -1,9 +1,12 @@
 package com.restaurant.a3.RestaurantApi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -31,6 +34,14 @@ public class UserModel implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false,  length = 25)
     private Role role = Role.ROLE_DEFAULT;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<CommentModel> comments = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<AssessmentModel> assesments = new ArrayList<>();
 
 
     public enum Role {
