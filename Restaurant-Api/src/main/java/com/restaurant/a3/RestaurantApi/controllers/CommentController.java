@@ -40,4 +40,6 @@ public class CommentController {
         return ResponseEntity.ok().body(CommentMapper.toListDto(commentService.getCommentsByUserId(id)));
 
     }
+
+
 }

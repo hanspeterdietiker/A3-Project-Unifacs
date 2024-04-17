@@ -20,6 +20,7 @@ public class CommentService {
         return commentRepository.save(comment);
     }
 
+    @Transactional(readOnly = true)
     public List<CommentModel> getCommentsByUserId(Long id) {
         try {
 
