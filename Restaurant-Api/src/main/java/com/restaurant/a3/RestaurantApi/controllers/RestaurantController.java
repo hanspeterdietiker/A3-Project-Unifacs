@@ -86,4 +86,11 @@ public class RestaurantController {
         var restaurant = restaurantService.findById(id);
         return ResponseEntity.ok(RestaurantMapper.toDto(restaurant));
     }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> deleteRestaurantById(@PathVariable Long id) {
+        restaurantService.removeRestaurant(id);
+        return ResponseEntity.noContent().build();
+    }
 }
