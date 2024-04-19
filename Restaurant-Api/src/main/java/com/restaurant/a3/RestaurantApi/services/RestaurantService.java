@@ -35,7 +35,15 @@ public class RestaurantService {
     @Transactional(readOnly = true)
     public RestaurantModel findByIdWithComments(Long id) {
         return restaurantRepository.findByIdWithComments(id)
-                .orElseThrow(() -> new EntityNotFoundException("Restaurant not found with id: " + id));
+                .orElseThrow(() -> new EntityNotFoundException("Restaurante não encontrado com id: " + id)
+                );
+    }
+
+    @Transactional(readOnly = true)
+    public RestaurantModel findByIdWithAssessments(Long id) {
+        return restaurantRepository.findByIdWithAssessments(id).orElseThrow(
+                () -> new EntityNotFoundException("Restaurante não encontrado com id: " + id)
+        );
     }
 
     public RestaurantModel addressRegister(RestaurantModel r) {

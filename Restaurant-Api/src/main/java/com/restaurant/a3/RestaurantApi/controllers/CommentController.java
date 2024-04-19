@@ -24,16 +24,6 @@ public class CommentController {
     @Autowired
     private UserService userService;
 
-    @PostMapping
-    @PreAuthorize("hasRole('DEFAULT')")
-    public ResponseEntity<CommentResponseDto> createComment(@RequestBody @Valid CommentCreateDto comment,
-                                                            @AuthenticationPrincipal JwtUserDetails userDetails) {
-        var c = CommentMapper.toComment(comment);
-        c.setUser(userService.findById(userDetails.getId()));
-        commentService.saveComment(c);
-        return ResponseEntity.status(201).body(CommentMapper.toDto(c));
-    }
-
     @GetMapping("/details-user/{id}")
     @PreAuthorize("hasRole('ADMIN') OR (hasRole('DEFAULT') AND #id == authentication.principal.id)")
     public ResponseEntity<List<CommentResponseDto>> getCommentsByUser(@PathVariable Long id) {

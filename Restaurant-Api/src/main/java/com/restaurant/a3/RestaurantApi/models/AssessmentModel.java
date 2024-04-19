@@ -1,5 +1,6 @@
 package com.restaurant.a3.RestaurantApi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
@@ -31,11 +32,16 @@ public class AssessmentModel implements Serializable {
     @Column(name = "ambient_note",nullable = false,length = 1)
     private int ambientNote;
 
+    @CreatedBy
+    @Column(name="name_create")
+    private String nameCreate;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserModel user;
 
-    @CreatedBy
-    @Column(name="name_create")
-    private String nameCreate;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private RestaurantModel restaurant;
 }

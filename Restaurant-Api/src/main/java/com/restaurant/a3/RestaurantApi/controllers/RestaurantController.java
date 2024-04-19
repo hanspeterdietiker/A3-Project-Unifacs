@@ -1,13 +1,12 @@
 package com.restaurant.a3.RestaurantApi.controllers;
 
 import com.restaurant.a3.RestaurantApi.Jwt.JwtUserDetails;
-import com.restaurant.a3.RestaurantApi.dtos.CommentCreateDto;
-import com.restaurant.a3.RestaurantApi.dtos.CommentResponseDto;
-import com.restaurant.a3.RestaurantApi.dtos.RestaurantCreateDto;
-import com.restaurant.a3.RestaurantApi.dtos.RestaurantResponseDto;
+import com.restaurant.a3.RestaurantApi.dtos.*;
+import com.restaurant.a3.RestaurantApi.dtos.mappers.AssessmentMapper;
 import com.restaurant.a3.RestaurantApi.dtos.mappers.CommentMapper;
 import com.restaurant.a3.RestaurantApi.dtos.mappers.RestaurantMapper;
 import com.restaurant.a3.RestaurantApi.models.address.viacep.Viacep;
+import com.restaurant.a3.RestaurantApi.services.AssessmentService;
 import com.restaurant.a3.RestaurantApi.services.CommentService;
 import com.restaurant.a3.RestaurantApi.services.RestaurantService;
 import com.restaurant.a3.RestaurantApi.services.UserService;
@@ -33,6 +32,9 @@ public class RestaurantController {
     @Autowired
     private CommentService commentService;
 
+    @Autowired
+    private AssessmentService assessmentService;
+
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<RestaurantResponseDto> createRestaurant(@RequestBody @Valid RestaurantCreateDto restaurant) {
@@ -56,16 +58,32 @@ public class RestaurantController {
         return ResponseEntity.status(201).body(CommentMapper.toDto(c));
     }
 
+    @PostMapping("/{id}/assessment")
+    @PreAuthorize("hasRole('DEFAULT')")
+    public ResponseEntity<AssessmentResponseDto> createAssessment(@RequestBody @Valid AssessmentCreateDto assessment,
+                                                               @AuthenticationPrincipal JwtUserDetails userDetails,
+                                                               @PathVariable Long id) {
+        var r = restaurantService.findById(id);
+
+        var a = AssessmentMapper.toAssessment(assessment);
+        a.setUser(userService.findById(userDetails.getId()));
+        a.setRestaurant(r);
+        assessmentService.save(a);
+
+        return ResponseEntity.status(201).body(AssessmentMapper.toDto(a));
+    }
+
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'DEFAULT')")
     public ResponseEntity<List<RestaurantResponseDto>> getRestaurants() {
         return  ResponseEntity.ok(RestaurantMapper.toListDto(restaurantService.getAll()));
     }
 
+
     @GetMapping("/{id}")
     @PreAuthorize("hasAnyRole('ADMIN', 'DEFAULT')")
     public ResponseEntity<RestaurantResponseDto> getRestaurantById(@PathVariable Long id) {
-        var restaurant = restaurantService.findByIdWithComments(id);
+        var restaurant = restaurantService.findById(id);
         return ResponseEntity.ok(RestaurantMapper.toDto(restaurant));
     }
 }

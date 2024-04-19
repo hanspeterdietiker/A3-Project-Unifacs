@@ -1,6 +1,5 @@
 package com.restaurant.a3.RestaurantApi.dtos;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
 @NoArgsConstructor
@@ -8,8 +7,9 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class AssessmentReponseDto {
+public class AssessmentResponseDto {
     private int foodNote;
     private int serviceNote;
     private int ambientNote;
+    private String nameCreate;
 }

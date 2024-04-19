@@ -19,4 +19,5 @@ public class RestaurantResponseDto {
     private String street;
     private String district;
     private List<CommentResponseDto> comments;
+    private List<AssessmentResponseDto> assessments;
 }

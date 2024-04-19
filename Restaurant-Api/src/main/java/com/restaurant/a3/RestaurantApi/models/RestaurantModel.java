@@ -43,12 +43,12 @@ public class RestaurantModel implements Serializable {
     @Column(name = "district", nullable = false)
     private String district;
 
-//    @ManyToOne
-//    @JoinColumn(name = "comment_id")
-//    private List<CommentModel> comments = new ArrayList<>();
+    @Getter
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
+    private List<AssessmentModel> assessments = new ArrayList<>();
 
     @Getter
-    @OneToMany(mappedBy = "restaurant")
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
     private  List<CommentModel> comments = new ArrayList<>();
 
     public RestaurantModel (Long id, String name, String cep, String state, String city, String street, String district) {

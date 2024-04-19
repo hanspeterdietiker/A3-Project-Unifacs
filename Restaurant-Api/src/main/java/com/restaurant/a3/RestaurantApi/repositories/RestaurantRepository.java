@@ -10,4 +10,8 @@ import java.util.Optional;
 public interface RestaurantRepository extends JpaRepository<RestaurantModel, Long> {
     @Query("SELECT r FROM RestaurantModel r LEFT JOIN FETCH r.comments WHERE r.id = :id")
     Optional<RestaurantModel> findByIdWithComments(@Param("id") Long id);
+
+    @Query("SELECT r FROM RestaurantModel r LEFT JOIN FETCH r.assessments WHERE r.id = :id")
+    Optional<RestaurantModel> findByIdWithAssessments(@Param("id") Long id);
+
 }
