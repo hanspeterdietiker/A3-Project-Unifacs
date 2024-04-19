@@ -1,5 +1,6 @@
 package com.restaurant.a3.RestaurantApi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedBy;
@@ -49,4 +50,9 @@ public class CommentModel implements Serializable {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserModel user;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private RestaurantModel restaurant;
 }

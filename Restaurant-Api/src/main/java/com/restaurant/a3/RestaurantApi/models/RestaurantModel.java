@@ -1,6 +1,7 @@
 package com.restaurant.a3.RestaurantApi.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.restaurant.a3.RestaurantApi.models.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -27,14 +28,37 @@ public class RestaurantModel implements Serializable {
     @Column(name = "name", nullable = false, length = 30)
     private String name;
 
-    @Column(name = "restaurant_address", nullable = false, length = 255)
-    private Address address;
+    @Column(name = "cep", nullable = false, length = 8)
+    private String cep;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "restaurant_assesment", cascade = CascadeType.ALL)
-    private List<AssessmentModel> assessments= new ArrayList<>();
+    @Column(name = "state", nullable = false)
+    private String state;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "restaurant_comment",cascade = CascadeType.ALL)
-    private  List<CommentModel> comments= new ArrayList<>();
-}
+    @Column(name = "city", nullable = false)
+    private String city;
+
+    @Column(name = "street", nullable = false)
+    private String street;
+
+    @Column(name = "district", nullable = false)
+    private String district;
+
+//    @ManyToOne
+//    @JoinColumn(name = "comment_id")
+//    private List<CommentModel> comments = new ArrayList<>();
+
+    @Getter
+    @OneToMany(mappedBy = "restaurant")
+    private  List<CommentModel> comments = new ArrayList<>();
+
+    public RestaurantModel (Long id, String name, String cep, String state, String city, String street, String district) {
+        this.id = id;
+        this.name = name;
+        this.cep = cep;
+        this.state = state;
+        this.city = city;
+        this.street = street;
+        this.district = district;
+    }
+
+    }

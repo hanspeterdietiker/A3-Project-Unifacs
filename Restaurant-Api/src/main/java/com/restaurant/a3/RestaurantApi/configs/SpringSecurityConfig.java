@@ -31,8 +31,9 @@ public class SpringSecurityConfig {
                 .httpBasic(basic -> basic.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                antMatcher(HttpMethod.POST, "/api/restaurant/users"),
+                                antMatcher(HttpMethod.POST, "/api/v1/restaurant/users"),
                                 antMatcher(HttpMethod.POST, "/api/restaurant/auth"),
+                                antMatcher(HttpMethod.GET, "https://viacep.com.br/ws/**"),
                                 antMatcher("/docs-api-restaurant.html"),
                                 antMatcher("/docs-api-restaurant/**"),
                                 antMatcher("/swagger-ui.html"),
