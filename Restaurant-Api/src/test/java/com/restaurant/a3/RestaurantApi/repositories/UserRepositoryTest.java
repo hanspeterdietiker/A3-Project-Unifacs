@@ -56,4 +56,5 @@ class UserRepositoryTest {
 
     return newUser;
     }
+
 }

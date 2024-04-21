@@ -1,7 +1,5 @@
 package com.restaurant.a3.RestaurantApi.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.restaurant.a3.RestaurantApi.models.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
