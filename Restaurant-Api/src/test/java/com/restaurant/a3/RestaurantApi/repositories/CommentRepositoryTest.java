@@ -94,7 +94,8 @@ class CommentRepositoryTest {
     }
 
     private RestaurantModel createRestaurant() {
-        RestaurantModel restaurant = new RestaurantModel(1L, "RestaurantTest", "12345678", "stateTest", "cityTest", "streetTest", "districtTest");
+        RestaurantModel restaurant = new RestaurantModel(1L, "RestaurantTest", "12345678",
+                "stateTest", "cityTest", "streetTest", "districtTest");
        return  this.entityManager.merge(restaurant);
     }
 
