@@ -5,6 +5,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Restaurant-Api/pom.xml" />
+        <option value="$PROJECT_DIR$/softwareTools/pom.xml" />
+        <option value="$PROJECT_DIR$/SoftwareTools-Api/pom.xml" />
       </list>
     </option>
   </component>
