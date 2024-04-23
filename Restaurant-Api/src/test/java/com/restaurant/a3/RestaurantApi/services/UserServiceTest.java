@@ -30,9 +30,6 @@ class UserServiceTest {
     UserService userService;
 
     @Mock
-    PasswordEncoder passwordEncoder;
-
-    @Mock
     UserRepository userRepository;
 
     @BeforeEach
