@@ -98,4 +98,95 @@ public class UserIT {
         assertThat(response).isNotNull();
         assertThat(response.getStatus()).isEqualTo(409);
     }
+
+    @Test
+    public void getAllUsers_WithValidAuthentication_ReturnStatus200() {
+//        Admin buscando todos os usuários
+        List<UserResponseDto> response = testClient.get()
+                .uri("/api/v1/restaurant/users")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "admin@email.com", "123456"))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBodyList(UserResponseDto.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.size()).isEqualTo(4);
+    }
+
+    @Test
+    public  void getAllUsers_WithInvalidAuthentication_ReturnStatus403() {
+//        Usuário tentando buscar todos os usuários
+        ErrorMessage response = testClient.get()
+                .uri("/api/v1/restaurant/users")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "luis@email.com", "123456"))
+                .exchange()
+                .expectStatus().isForbidden()
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getStatus()).isEqualTo(403);
+
+    }
+
+    @Test
+    public void getUserById_WithValidAuthentication_ReturnStatus200() {
+//        Admin buscando um usuário por id
+        UserResponseDto response = testClient.get()
+                .uri("/api/v1/restaurant/users/100")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "admin@email.com", "123456"))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(UserResponseDto.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getId()).isEqualTo(100);
+
+//       Um usuário buscando seus próprios dados por id
+         response = testClient.get()
+                .uri("/api/v1/restaurant/users/100")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "luis@email.com", "123456"))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(UserResponseDto.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getId()).isEqualTo(100);
+    }
+
+    @Test
+    public void getUserById_NotFoundedUser_returnStatus404() {
+//        Admin buscando um usuário por id inexistente
+        ErrorMessage response = testClient.get()
+                .uri("/api/v1/restaurant/users/200")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "admin@email.com", "123456"))
+                .exchange()
+                .expectStatus().isNotFound()
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getStatus()).isEqualTo(404);
+    }
+
+    @Test
+    public void getUserById_WithInvalidAuthentication_returnStatus403() {
+//        Usuário tentando buscar um outro usuário por id
+        ErrorMessage response = testClient.get()
+                .uri("/api/v1/restaurant/users/101")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "luis@email.com", "123456"))
+                .exchange()
+                .expectStatus().isForbidden()
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getStatus()).isEqualTo(403);
+    }
+
+
+
 }
