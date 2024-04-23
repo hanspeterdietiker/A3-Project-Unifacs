@@ -15,14 +15,11 @@ import lombok.*;
 public class AssessmentCreateDto {
     @Min(1)
     @Max(5)
-    @NotBlank
     private int foodNote;
     @Min(1)
     @Max(5)
-    @NotBlank
     private int serviceNote;
     @Min(1)
     @Max(5)
-    @NotBlank
     private int ambientNote;
 }

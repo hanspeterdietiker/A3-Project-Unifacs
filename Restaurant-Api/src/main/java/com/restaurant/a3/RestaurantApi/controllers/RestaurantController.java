@@ -50,6 +50,8 @@ public class RestaurantController {
                     @ApiResponse(responseCode = "201", description = "Restaurante criado com sucesso!",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
                     @ApiResponse(responseCode = "422", description = "Campos inválidos!",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
+                    @ApiResponse(responseCode = "403", description = "Acesso negado!",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class)))
             })
     @PostMapping
@@ -66,7 +68,7 @@ public class RestaurantController {
             responses = {
                     @ApiResponse(responseCode = "201", description = "Comentário criado com sucesso!",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
-                    @ApiResponse(responseCode = "422", description = "Campos inválidos!",
+                    @ApiResponse(responseCode = "403", description = "Acesso negado!",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class)))
             })
     @PostMapping("/{id}/comment")
@@ -90,7 +92,7 @@ public class RestaurantController {
             responses = {
                     @ApiResponse(responseCode = "201", description = "Avaliação criada com sucesso!",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = UserResponseDto.class))),
-                    @ApiResponse(responseCode = "422", description = "Campos inválidos!",
+                    @ApiResponse(responseCode = "403", description = "Acesso negado!",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class)))
             })
     @PostMapping("/{id}/assessment")
@@ -147,13 +149,9 @@ public class RestaurantController {
                     "exige bearer token (acesso restrito a admins).",
             security = @SecurityRequirement(name = "security"),
             responses = {
-                    @ApiResponse(responseCode = "200", description = "Senha alterada com sucesso!",
+                    @ApiResponse(responseCode = "200", description = "Restaurante deletado com sucesso!",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = Void.class))),
                     @ApiResponse(responseCode = "403", description = "Acesso negado!",
-                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-                    @ApiResponse(responseCode = "422", description = "Campos inválidos!",
-                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class))),
-                    @ApiResponse(responseCode = "400", description = "Senhas incompativeis!",
                             content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorMessage.class)))
             })
     @DeleteMapping("/{id}")
