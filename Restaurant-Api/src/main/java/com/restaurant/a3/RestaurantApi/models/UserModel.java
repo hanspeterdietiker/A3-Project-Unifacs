@@ -36,12 +36,12 @@ public class UserModel implements Serializable {
     private Role role = Role.ROLE_DEFAULT;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",  cascade = CascadeType.ALL)
     private List<CommentModel> comments = new ArrayList<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user")
-    private List<AssessmentModel> assesments = new ArrayList<>();
+    @OneToMany(mappedBy = "user",  cascade = CascadeType.ALL)
+    private List<AssessmentModel> assessments = new ArrayList<>();
 
 
     public enum Role {

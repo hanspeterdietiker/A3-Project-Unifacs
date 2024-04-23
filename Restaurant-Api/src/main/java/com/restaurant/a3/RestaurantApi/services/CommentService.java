@@ -22,12 +22,12 @@ public class CommentService {
 
     @Transactional(readOnly = true)
     public List<CommentModel> getCommentsByUserId(Long id) {
-        try {
-
-            return commentRepository.findCommentsByUser(id);
-        }catch (DataIntegrityViolationException exception) {
+        List<CommentModel> comments = commentRepository.findCommentsByUser(id);
+        if (comments.isEmpty()) {
             throw new EntityNotFoundException("Usuário não encontrado!");
         }
+        return comments;
+
     }
 
 }
