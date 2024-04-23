@@ -1,0 +1,4 @@
+INSERT INTO app_users (id, name, username, password, role) VALUES (100, 'Luis', 'luis@email.com', '$2a$12$RK43Ni/UANSiMFsT78wqKeavNY44D2RxWJbr8kRrVw8FLWwQ.o1p.', 'ROLE_DEFAULT');
+INSERT INTO app_users (id, name, username, password, role) VALUES (101, 'Maria', 'maria@email.com', '$2a$12$RK43Ni/UANSiMFsT78wqKeavNY44D2RxWJbr8kRrVw8FLWwQ.o1p.', 'ROLE_DEFAULT');
+INSERT INTO app_users (id, name, username, password, role) VALUES (102, 'Bob', 'bobs@email.com', '$2a$12$RK43Ni/UANSiMFsT78wqKeavNY44D2RxWJbr8kRrVw8FLWwQ.o1p.', 'ROLE_DEFAULT');
+INSERT INTO app_users (id, name, username, password, role) VALUES (103, 'Admin', 'admin@email.com', '$2a$12$RK43Ni/UANSiMFsT78wqKeavNY44D2RxWJbr8kRrVw8FLWwQ.o1p.', 'ROLE_ADMIN');

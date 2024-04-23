@@ -1,0 +1,101 @@
+package com.restaurant.a3.RestaurantApi.IT;
+import com.restaurant.a3.RestaurantApi.dtos.UserCreateDto;
+import com.restaurant.a3.RestaurantApi.dtos.UserResponseDto;
+import com.restaurant.a3.RestaurantApi.exceptions.ErrorMessage;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.web.reactive.server.WebTestClient;
+
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Sql(scripts = "/sql/users/users-insert.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
+@Sql(scripts = "/sql/users/users-delete.sql", executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+public class UserIT {
+
+    @Autowired
+    WebTestClient testClient;
+
+    //	 Regra para criação de metodos referentes a testes:  motivo do teste_O que será testado_O que sera retornado
+
+    @Test
+    public  void createUser_WithDataValidation_ReturnStatus201() {
+        UserResponseDto response = testClient.post()
+                .uri("/api/v1/restaurant/users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserCreateDto("test", "test@email.com", "123456"))
+                .exchange()
+                .expectStatus().isCreated()
+                .expectBody(UserResponseDto.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getId()).isNotNull();
+        assertThat(response.getName()).isEqualTo("test");
+        assertThat(response.getUsername()).isEqualTo("test@email.com");
+        assertThat(response.getRole()).isEqualTo("DEFAULT");
+
+    }
+
+    @Test
+    public  void createUser_WithUsernameAndPasswordInvalidation_ReturnStatus422() {
+//        Tentando criar um usuário cm uma senha inválida
+        ErrorMessage response = testClient.post()
+                .uri("/api/v1/restaurant/users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserCreateDto("test", "test@email.com", "12345"))
+                .exchange()
+                .expectStatus().isEqualTo(422)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getStatus()).isEqualTo(422);
+
+//        Tentando criar um usuário com o email inválido
+        response = testClient.post()
+                .uri("/api/v1/restaurant/users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserCreateDto("test", "test@ema", "123456"))
+                .exchange()
+                .expectStatus().isEqualTo(422)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getStatus()).isEqualTo(422);
+
+        response = testClient.post()
+                .uri("/api/v1/restaurant/users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserCreateDto("test", "", "123456"))
+                .exchange()
+                .expectStatus().isEqualTo(422)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getStatus()).isEqualTo(422);
+
+    }
+
+    @Test
+    public void createUser_WithUsernameAlreadyExists_ReturnStatus409() {
+        ErrorMessage response = testClient.post()
+                .uri("/api/v1/restaurant/users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserCreateDto("test", "luis@email.com", "123456"))
+                .exchange()
+                .expectStatus().isEqualTo(409)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(response).isNotNull();
+        assertThat(response.getStatus()).isEqualTo(409);
+    }
+}
