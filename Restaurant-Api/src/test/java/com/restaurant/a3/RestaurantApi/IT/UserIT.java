@@ -1,5 +1,6 @@
 package com.restaurant.a3.RestaurantApi.IT;
 import com.restaurant.a3.RestaurantApi.dtos.UserCreateDto;
+import com.restaurant.a3.RestaurantApi.dtos.UserPassDto;
 import com.restaurant.a3.RestaurantApi.dtos.UserResponseDto;
 import com.restaurant.a3.RestaurantApi.exceptions.ErrorMessage;
 import org.junit.jupiter.api.Test;
@@ -187,6 +188,123 @@ public class UserIT {
         assertThat(response.getStatus()).isEqualTo(403);
     }
 
+    @Test
+    public  void putUserById_WithDataValidation_ReturnStatus200() {
+        //Admin modificando sua senha
+        testClient.put()
+                .uri("/api/v1/restaurant/users/103")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "admin@email.com", "123456"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPassDto("123456", "654321", "654321"))
+                .exchange()
+                .expectStatus().isNoContent();
 
+        //Usuário modificando sua senha
+        testClient.put()
+                .uri("/api/v1/restaurant/users/100")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "luis@email.com", "123456"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPassDto("123456", "654321", "654321"))
+                .exchange()
+                .expectStatus().isNoContent();
+    }
+
+    @Test
+    public void putUser_WithInvalidAuthentication_ReturnStatus403() {
+//		Usuário tentando alterar senha de outro usuário
+        ErrorMessage responseBody = testClient.put()
+                .uri("api/v1/restaurant/users/101")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "luis@email.com", "123456"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPassDto("123456", "654322", "654321"))
+                .exchange()
+                .expectStatus().isEqualTo(403)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(responseBody).isNotNull();
+        assertThat(responseBody.getStatus()).isEqualTo(403);
+
+//		Admin tentando alterar senha de outro usuário
+        responseBody = testClient.put()
+                .uri("api/v1/restaurant/users/100")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "admin@email.com", "123456"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPassDto("123456", "654322", "654321"))
+                .exchange()
+                .expectStatus().isEqualTo(403)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(responseBody).isNotNull();
+        assertThat(responseBody.getStatus()).isEqualTo(403);
+
+    }
+
+    @Test
+    public void userPut_WithInvalidPass_ReturnStatus400() {
+//		Usuario inserindo senha de confirmação errada
+        ErrorMessage responseBody = testClient.put()
+                .uri("api/v1/restaurant/users/100")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "luis@email.com", "123456"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPassDto("123456", "654322", "654321"))
+                .exchange()
+                .expectStatus().isEqualTo(400)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(responseBody).isNotNull();
+        assertThat(responseBody.getStatus()).isEqualTo(400);
+
+//		Usuario inserindo senha atual errada
+        responseBody = testClient.put()
+                .uri("api/v1/restaurant/users/100")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "luis@email.com", "123456"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPassDto("123455", "654321", "654321"))
+                .exchange()
+                .expectStatus().isEqualTo(400)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(responseBody).isNotNull();
+        assertThat(responseBody.getStatus()).isEqualTo(400);
+
+
+    }
+
+    @Test
+    public void userPut_WithDataInvalid_ReturnStatus422() {
+//		Usuario inserindo senha de confirmação vazia
+        ErrorMessage responseBody = testClient.put()
+                .uri("api/v1/restaurant/users/100")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "luis@email.com", "123456"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPassDto("123456", "654322", ""))
+                .exchange()
+                .expectStatus().isEqualTo(422)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(responseBody).isNotNull();
+        assertThat(responseBody.getStatus()).isEqualTo(422);
+
+//		Usuario inserindo senha atual com um digito a menos
+        responseBody = testClient.put()
+                .uri("api/v1/restaurant/users/100")
+                .headers(JwtAuthentication.getHeaderAuthorization(testClient, "luis@email.com", "123456"))
+                .contentType(MediaType.APPLICATION_JSON)
+                .bodyValue(new UserPassDto("12345", "654321", "654321"))
+                .exchange()
+                .expectStatus().isEqualTo(422)
+                .expectBody(ErrorMessage.class)
+                .returnResult().getResponseBody();
+
+        assertThat(responseBody).isNotNull();
+        assertThat(responseBody.getStatus()).isEqualTo(422);
+
+
+    }
 
 }
