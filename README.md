@@ -26,9 +26,9 @@ avaliações e comentários.
 estrelas(1 a 5 estrelas).
 - As avaliações devem ser compostas por comida, ambiente e funcionários.
   
-## 📃 Documentação do Projeto | Links (Apenas Clicar em cima do Badge):
-- [![Levantamento de Requesitos](https://aleen42.github.io/badges/src/google_plus.svg)](https://drive.google.com/file/d/1M6X_rlSypMEDc0Yr11G7hSyKww9SkYfZ/view?usp=sharing)
-- [![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)](https://hanspeter.atlassian.net/jira/software/projects/KAN/boards/1)  
+## 📃 Links do Projeto (Apenas Clicar em cima do Badge):
+- Workflow: [![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)](https://hanspeter.atlassian.net/jira/software/projects/KAN/boards/1)
+  
 ## 📈 WorkFlow:
 - Utilizamos **Metologia Agil - Kanban**
 - To Do - Doing - Developing - Done ✅
