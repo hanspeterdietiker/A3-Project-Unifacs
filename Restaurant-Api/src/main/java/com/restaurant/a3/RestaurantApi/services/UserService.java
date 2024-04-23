@@ -61,12 +61,6 @@ public class UserService {
 
     }
 
-    private UserModel updatedCurrentPassword(UserModel u1, String newPassword) {
-        u1.setPassword(passwordEncoder.encode(newPassword));
-
-        return u1;
-    }
-
     public UserModel findByUsername(String username) {
         var user = userRepository.findByUsername(username).orElseThrow(
                 () -> new EntityNotFoundException(String.format("Usuário não encontrado | EMAIL: %s", username)));
@@ -79,6 +73,12 @@ public class UserService {
                 () -> new EntityNotFoundException(String.format("Usuário não encontrado | EMAIL: %s", username)));
 
         return  user.getRole();
+    }
+
+    private UserModel updatedCurrentPassword(UserModel u1, String newPassword) {
+        u1.setPassword(passwordEncoder.encode(newPassword));
+
+        return u1;
     }
 
 
