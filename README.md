@@ -3,9 +3,9 @@
 ## 👨🏽‍🎓 A3 - Projeto da Faculdade :
 -  Disciplinas do Semestre: **Gestão e Qualidade de Software**, **Modelos, Métodos e tecnicas de Engenharia de Software**
 -  Professor: **Felipe Oliveira**
--  Responsaveis pelo Back End: **Hanspeter Dietiker**, **Gabriel Silva Magalhães**,**Edioelson Junior**
--  Responsaveis pelo Front End: **Elvis Reis**, **Alfredo Ruas**, **Natan de Oliveira**
--  Responsaveis pelo DevOps:  **Todos os membros informados no Forms**
+-  Responsaveis pelo Back End: **Hanspeter Dietiker**, **Gabriel Silva Magalhães**
+-  Responsaveis pelo Front End: **Elvis Reis**, **Alfredo Ruas**, **Natan de Oliveira**,**Edioelson Junior**
+-  Responsaveis pelo DevOps:  **Aurea**,**Alfredo**,**Natan**, **Elvis**,**Arthur**, **Henrique**,**Hanspeter**, **Edioelson**, **Gabriel Magalhães**,**Daniels**,**Gabriel Oliveira**
   
 ## 📂 Instruções do Projeto :
 - Utilize **Intellij** ou equivalentes, tipo **Eclipse**, **VsCode**
@@ -55,4 +55,5 @@ estrelas(1 a 5 estrelas).
 
 
 ##  🫸 Observações:
-- Api/v1 ainda está em desenvolvimento
+- Api/v1(Restaurante) ainda está em desenvolvimento.
+- Ferramenta de Software(Front-End) ainda está em desenvolvimento.
