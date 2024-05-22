@@ -1,0 +1,107 @@
+/* Font import */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Inter:wght@100..900&display=swap");
+
+/* Color variables */
+:root {
+  --color-green: #003033;
+  --color-btn: #00484d;
+  --color-white: #fff;
+  --color-grey: #cccccc;
+}
+
+/* General Styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Toolbox style */
+.hero-toolbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-toolbox > div {
+  background-color: var(--color-green);
+  color: var(--color-grey);
+  font-family: "Inter";
+  width: 550px;
+  height: 350px;
+  text-align: justify;
+  padding: 1.5rem;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block;
+  margin: 0 0 1rem 1rem;
+}
+
+/* Toolbox header style */
+.hero-toolbox_header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.hero-toolbox_header > h2 {
+  margin-left: 1rem;
+  font-size: 2.2rem;
+}
+
+.hero-toolbox_img {
+  height: 70px;
+}
+
+/* 'See More' button style */
+.seeMoreBtn {
+  text-decoration: none;
+  color: var(--color-grey);
+  background-color: var(--color-btn);
+  padding: 10px;
+  border: solid 1px transparent;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+.seeMoreBtn:hover {
+  background-color: var(--color-grey);
+  color: var(--color-green);
+  border: solid 1px var(--color-btn);
+}
+
+/* Responsive styles */
+@media (max-width: 500px) {
+  .hero-toolbox {
+    display: block;
+  }
+
+  .hero-toolbox > div {
+    width: 380px;
+    height: 400px;
+  }
+}
+
+/* Extra styles */
+#microFocus-icon,
+#testLink-icon {
+  border-radius: 15px;
+}
+
+#hero-toolbox_header__title {
+  font-size: 2rem;
+}
+
+#hero-toolbox_img_azureRP,
+#hero-toolbox_img__ardoq,
+#hero-toolbox_img_sonarQube,
+#hero-toolbox_img_versionOne,
+#hero-toolbox_img_cypress {
+  width: 100px;
+}
+
+#hero-toolbox_img_creately {
+  border-radius: 999px;
+}

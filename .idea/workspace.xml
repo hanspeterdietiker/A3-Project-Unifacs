@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aca851ed-e957-4bb7-ae21-e7422cc14c12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SoftwareTools-Api/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareTools-Api/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareTools-Api/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareTools-Api/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareTools-Api/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareTools-Api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareTools-Api/src/main/java/com/software/a3/SoftwareToolsApi/Models/Enum/ESoftwareTypeTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareTools-Api/src/main/java/com/software/a3/SoftwareToolsApi/Models/SoftwareToolModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SoftwareTools-Api/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="aca851ed-e957-4bb7-ae21-e7422cc14c12" name="Changes" comment="feat&lt;SoftwareTools-Front&gt; add SoftwareTools Application">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +89,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -188,6 +180,8 @@
       <workItem from="1713814395241" duration="286000" />
       <workItem from="1713814729376" duration="89000" />
       <workItem from="1713814848148" duration="1047000" />
+      <workItem from="1716346884939" duration="830000" />
+      <workItem from="1716347722514" duration="14000" />
     </task>
     <servers />
   </component>

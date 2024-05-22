@@ -7,7 +7,13 @@
         <option value="$PROJECT_DIR$/Restaurant-Api/pom.xml" />
         <option value="$PROJECT_DIR$/softwareTools/pom.xml" />
         <option value="$PROJECT_DIR$/SoftwareTools-Api/pom.xml" />
+        <option value="$PROJECT_DIR$/SoftwareTools-Front/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/SoftwareTools-Front/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_18" project-jdk-name="17" project-jdk-type="JavaSDK">

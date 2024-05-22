@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Inter:wght@100..900&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis */
+:root {
+  --color-green: #003033;
+  --color-btn: #00484d;
+  --color-white: #fff;
+  --color-grey: #cccccc;
+}
+
+.hero-sidebar {
+  background-color: hsl(184, 100%, 7%);
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: none;
+  z-index: 10;
+}
+
+.hero-sidebar.active {
+  display: block;
+}
+
+.hero-sidebar_close {
+  background: none;
+  border: solid 1px transparent;
+  position: absolute;
+  right: 0;
+  padding: 1rem;
+}
+
+.hero-sidebar_close > img {
+  width: 40px;
+  cursor: pointer;
+}
+
+.hero-sidebar_title {
+  font-size: 48px;
+  font-weight: 800;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.hero-sidebar_navbar {
+  margin-left: 3rem;
+  margin-bottom: 11rem;
+}
+
+.hero-sidebar_navbar__option {
+  margin-bottom: 10px;
+  list-style: url(../img/sidebarOption-icon.svg);
+}
+
+.hero-sidebar_navbar__option > a {
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.hero-sidebar_navbar__option > a:hover {
+  transition: 0.2s linear;
+  border-bottom: solid 1px var(--color-white);
+}
+
+.hero-sidebar_title,
+.hero-sidebar_navbar__option > a {
+  font-family: "Inter";
+  color: var(--color-white);
+}
+
+.about-us {
+  text-decoration: none;
+  color: var(--color-white);
+  background-color: var(--color-btn);
+  padding: 10px 100px;
+  font-family: "Inter";
+  font-size: 24px;
+  margin: 2rem;
+  border-radius: 15px;
+}
+
+.about-us:hover {
+  background-color: var(--color-grey);
+  color: var(--color-green);
+  border: solid 1px var(--color-btn);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  display: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 950px) {
+  .hero-sidebar_navbar {
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1500px) {
+  .hero-sidebar_navbar {
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+  }
+}
