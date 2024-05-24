@@ -29,6 +29,7 @@ import java.util.List;
 @Tag(name = "Restaurantes", description = "Realiza as operações de busca, remoção, adição de restaurantes e os seus comentários e avaliações.")
 @RestController
 @RequestMapping("/api/v1/restaurant")
+@CrossOrigin("*")
 public class RestaurantController {
 
     @Autowired

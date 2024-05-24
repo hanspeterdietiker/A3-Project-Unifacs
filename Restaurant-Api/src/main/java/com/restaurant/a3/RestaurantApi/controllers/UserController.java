@@ -23,6 +23,7 @@ import java.util.List;
 @Tag(name = "Usuários", description = "Realiza todas as operações de leitura, adição e edição do usuário.")
 @RestController
 @RequestMapping("/api/v1/restaurant/users")
+@CrossOrigin("*")
 public class UserController {
 
     @Autowired
