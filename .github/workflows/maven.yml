@@ -28,11 +28,12 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '17'
+        distribution: 'temurin'
+        cache: maven
     - name: List files
       run: ls -la
     - name: Build with Maven
-      working-directory: Restaurant-Api/pom.xml
-      run: mvn clean install
+      run: mvn -B package --file Restaurant-Api/pom.xml
     - name: Run tests
       working-directory: Restaurant-Api/src/test/java/com/restaurant/a3/RestaurantApi
       run: mvn test
