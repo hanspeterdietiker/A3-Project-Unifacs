@@ -32,7 +32,7 @@ jobs:
     - name: List files
       run: ls -la
     - name: Build with Maven
-      working-directory: Restaurant-Api/pom.xml 
+      working-directory: C:\ws-a3\Restaurant-Api\pom.xml
       run: mvn clean install
     - name: Run tests
       working-directory: Restaurant-Api/src/test/java/com/restaurant/a3/RestaurantApi
