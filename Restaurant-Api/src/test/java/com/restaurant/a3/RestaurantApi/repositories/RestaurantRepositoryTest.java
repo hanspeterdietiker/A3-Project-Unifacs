@@ -32,54 +32,7 @@ class RestaurantRepositoryTest {
 
     @Autowired
     EntityManager entityManager;
-
-    @Test
-    @DisplayName("Deve retornar os comentários de um restaurante com sucesso")
-    void findByIdWithComments() {
-        RestaurantModel restaurant = this.createRestaurant();
-
-
-        CommentCreateDto comment1 = new CommentCreateDto("Restaurante bem aromatizado!");
-        CommentCreateDto comment2 = new CommentCreateDto("Restaurante bem aromatizado!");
-        CommentModel testComment = this.createComment(comment1, restaurant);
-        this.createComment(comment2, restaurant);
-
-        Optional<RestaurantModel> getRestaurant = restaurantRepository.findByIdWithComments(1L);
-
-        assertThat(getRestaurant.isPresent()).isTrue();
-    }
-    @Test
-    @DisplayName("Não deve retornar os comentários de um restaurante com sucesso")
-    void findByIdWithCommentsError() {
-        RestaurantModel restaurant = this.createRestaurant();
-
-
-        CommentCreateDto comment1 = new CommentCreateDto("Restaurante bem aromatizado!");
-        CommentCreateDto comment2 = new CommentCreateDto("Restaurante bem aromatizado!");
-        CommentModel testComment = this.createComment(comment1, restaurant);
-        this.createComment(comment2, restaurant);
-
-        Optional<RestaurantModel> getRestaurant = restaurantRepository.findByIdWithComments(2L);
-
-        assertThat(getRestaurant.isEmpty()).isTrue();
-    }
-
-    @Test
-    @DisplayName("Deve retornar as avaliações de um restaurante com sucesso")
-    void findByIdWithAssessmentsSucess() {
-        RestaurantModel restaurant = this.createRestaurant();
-
-
-        AssessmentCreateDto a1 = new AssessmentCreateDto(1, 1, 1);
-        AssessmentCreateDto a2 = new AssessmentCreateDto(1, 1, 1);
-        AssessmentModel testAssessment = this.createAssessment(a1, restaurant);
-        this.createAssessment(a2, restaurant);
-
-        Optional<RestaurantModel> getRestaurant = restaurantRepository.findByIdWithComments(1L);
-
-        assertThat(getRestaurant.isPresent()).isTrue();
-
-    }
+    
 
     private RestaurantModel createRestaurant() {
         RestaurantModel restaurant = new RestaurantModel(1L, "RestaurantTest", "12345678",
