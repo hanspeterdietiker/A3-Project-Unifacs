@@ -32,7 +32,7 @@ class RestaurantRepositoryTest {
 
     @Autowired
     EntityManager entityManager;
-    
+
 
     private RestaurantModel createRestaurant() {
         RestaurantModel restaurant = new RestaurantModel(1L, "RestaurantTest", "12345678",

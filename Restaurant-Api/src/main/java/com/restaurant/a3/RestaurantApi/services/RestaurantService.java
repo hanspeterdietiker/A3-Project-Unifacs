@@ -32,20 +32,6 @@ public class RestaurantService {
         return restaurantRepository.findAll();
     }
 
-    @Transactional(readOnly = true)
-    public RestaurantModel findByIdWithComments(Long id) {
-        return restaurantRepository.findByIdWithComments(id)
-                .orElseThrow(() -> new EntityNotFoundException("Restaurante não encontrado com id: " + id)
-                );
-    }
-
-    @Transactional(readOnly = true)
-    public RestaurantModel findByIdWithAssessments(Long id) {
-        return restaurantRepository.findByIdWithAssessments(id).orElseThrow(
-                () -> new EntityNotFoundException("Restaurante não encontrado com id: " + id)
-        );
-    }
-
     public RestaurantModel addressRegister(RestaurantModel r) {
         r.setState(Viacep.getAddress(r.getCep()).getUf());
         r.setCity(Viacep.getAddress(r.getCep()).getLocalidade());
