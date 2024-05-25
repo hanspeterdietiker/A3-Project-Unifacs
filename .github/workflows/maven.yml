@@ -34,9 +34,6 @@ jobs:
       run: ls -la
     - name: Build with Maven
       run: mvn -B package --file Restaurant-Api/pom.xml
-    - name: Run tests
-      working-directory: Restaurant-Api/src/test/java/com/restaurant/a3/RestaurantApi
-      run: mvn test
       env:
         SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/project-api-restaurant
         SPRING_DATASOURCE_USERNAME: user
