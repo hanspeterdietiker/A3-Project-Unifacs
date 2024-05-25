@@ -28,11 +28,10 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '17'
-        distribution: 'adopt'
     - name: List files
       run: ls -la
     - name: Build with Maven
-      working-directory: ../../../Restaurant-Api/pom.xml
+      working-directory: Restaurant-Api/pom.xml
       run: mvn clean install
     - name: Run tests
       working-directory: Restaurant-Api/src/test/java/com/restaurant/a3/RestaurantApi
