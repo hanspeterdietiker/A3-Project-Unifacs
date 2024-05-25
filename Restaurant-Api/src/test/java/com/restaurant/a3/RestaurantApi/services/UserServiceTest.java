@@ -1,5 +1,7 @@
 package com.restaurant.a3.RestaurantApi.services;
 
+import com.restaurant.a3.RestaurantApi.dtos.UserCreateDto;
+import com.restaurant.a3.RestaurantApi.dtos.mappers.UserMapper;
 import com.restaurant.a3.RestaurantApi.exceptions.EmailUniqueViolationException;
 import com.restaurant.a3.RestaurantApi.exceptions.EntityNotFoundException;
 import com.restaurant.a3.RestaurantApi.models.UserModel;
@@ -12,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -31,6 +34,9 @@ class UserServiceTest {
 
     @Mock
     UserRepository userRepository;
+
+    @Mock
+    private PasswordEncoder passwordEncoder;
 
     @BeforeEach
     void setup() {
@@ -91,15 +97,16 @@ class UserServiceTest {
     @Test
     @DisplayName("Deve salvar um usuário com sucesso no DB")
     void saveUserSucess() {
-        UserModel u = new UserModel();
-        u.setName("userTest");
+        UserCreateDto uuserCreate = new UserCreateDto("UserTest","test@email.com", "123456");
+        UserModel u = UserMapper.toUser(uuserCreate);
 
+        when(passwordEncoder.encode(any(CharSequence.class))).thenReturn("encodedPassword");
         when(userRepository.save(u)).thenReturn(u);
 
         UserModel getUser = userService.saveUser(u);
 
         assertThat(getUser).isNotNull();
-        assertThat(getUser.getName()).isEqualTo("userTest");
+        assertThat(getUser.getName()).isEqualTo("UserTest");
         verify(userRepository, times(1)).save(u);
     }
 
@@ -112,7 +119,7 @@ class UserServiceTest {
         when(userRepository.save(u)).thenThrow(DataIntegrityViolationException.class);
         assertThatThrownBy(() -> userService.saveUser(u))
                 .isInstanceOf(EmailUniqueViolationException.class)
-                .hasMessageContaining(String.format("Email: '%s' já cadastrado!", u.getUsername()));
+                .hasMessage(String.format("Email: '%s' já cadastrado!", u.getUsername()));
     }
 
     @Test

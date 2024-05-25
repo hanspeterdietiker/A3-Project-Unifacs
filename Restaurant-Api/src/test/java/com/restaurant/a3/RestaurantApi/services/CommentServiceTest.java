@@ -14,6 +14,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -85,11 +86,11 @@ class CommentServiceTest {
     @Test
     @DisplayName("Deve lançar exceção ao buscar comentários de um usuário inexistente")
     void getCommentsByUserIdIsNotFound() {
-        when(commentRepository.findCommentsByUser(1L)).thenThrow(DataIntegrityViolationException.class);
+        when(commentRepository.findCommentsByUser(1L)).thenReturn(Collections.emptyList());
 
         assertThatThrownBy(() -> commentService.getCommentsByUserId(1L))
                 .isInstanceOf(EntityNotFoundException.class)
-                .hasMessageContaining("Usuário não encontrado!");
+                .hasMessage("Usuário não encontrado!");
     }
 
 

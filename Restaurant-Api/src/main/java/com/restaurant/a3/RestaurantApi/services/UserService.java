@@ -39,7 +39,6 @@ public class UserService {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             return userRepository.save(user);
         }catch (DataIntegrityViolationException exception) {
-            exception.printStackTrace();
             throw  new EmailUniqueViolationException(String.format("Email: '%s' já cadastrado!", user.getUsername()));
         }
 
