@@ -1,26 +1,43 @@
-name: Project Java with Maven - Restaurant
+name: Java CI with Maven
 
-on:
-  push:
-    branches:
-      - main
-      - develop
-  pull_request:
-    branches:
-      - main
-      - develop
+on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-      - name: Build with Maven
-        run: mvn -B package --file Restaurant-Api/pom.xml
 
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:latest
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_DB: project-api-restaurant
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+        options: >-
+          --health-cmd "pg_isready -U user"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 17
+      uses: actions/setup-java@v2
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+    - name: List files
+      run: ls -la
+    - name: Build with Maven
+      run: mvn -B package --file Restaurant-Api/pom.xml
+    - name: Run tests
+      working-directory: Restaurant-Api/src/test/java/com/restaurant/a3/RestaurantApi
+      run: mvn test
+      env:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/project-api-restaurant
+        SPRING_DATASOURCE_USERNAME: user
+        SPRING_DATASOURCE_PASSWORD: password
