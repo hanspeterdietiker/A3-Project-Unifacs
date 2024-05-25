@@ -56,4 +56,4 @@ estrelas(1 a 5 estrelas).
 
 ##  🫸 Observações:
 - Api/v1(Restaurante) ainda está em desenvolvimento.
-- Ferramenta de Software(Front-End) ainda está em desenvolvimento.
+- Ferramenta de Software(Front-End): [![Alpha](<img width="120" height="30" src="https://alphascript-unifacs.netlify.app/img/wolf-icon.svg" alt="Alpha-Icon"/>)](https://alphascript-unifacs.netlify.app)
