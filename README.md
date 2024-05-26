@@ -54,12 +54,12 @@ estrelas(1 a 5 estrelas).
    
 
 
-##  🫸 Observações:
- <a href="https://front-restaurant-five.vercel.app/index.html" target="_blank">
-    <img  src="https://cdn-icons-png.flaticon.com/512/1046/1046747.png" alt="Menu-icon"/>
+##  🫸 Projetos:
+ <a style="float:left" href="https://front-restaurant-five.vercel.app/index.html" target="_blank">
+    <img  width="300" height="300" src="https://cdn-icons-png.flaticon.com/512/1046/1046747.png" alt="Menu-icon"/>
 </a>
- <a href="https://alphascript-unifacs.netlify.app" target="_blank">
-    <img width="512" height="512" src="https://alphascript-unifacs.netlify.app/img/wolf-icon.svg" alt="Alpha-Icon"/>
+ <a  style="float:left" href="https://alphascript-unifacs.netlify.app" target="_blank">
+    <img width="300" height="300"  src="https://alphascript-unifacs.netlify.app/img/wolf-icon.svg" alt="Alpha-Icon"/>
 </a>
 
 
