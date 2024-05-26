@@ -1,0 +1,78 @@
+body {
+  background-color: var(--background-body);
+}
+
+h2 {
+  font-family: "Alegreya Sans SC";
+  font-size: 55px;
+  color: var(--color-red);
+  padding-bottom: 2rem;
+}
+
+p {
+  font-size: 25px;
+  padding-bottom: 2rem;
+}
+
+p,
+.button {
+  font-family: "Oxygen";
+  color: #fff;
+}
+
+#principal {
+  padding: 4rem 0;
+  border-radius: 20px;
+  margin: 10em auto;
+  text-align: center;
+  width: 500px;
+  height: 614px;
+  background-color: var(--background-form);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu {
+  height: 55px;
+  width: 350px;
+  border: none;
+  border-radius: 15px;
+  list-style: none;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background-color: var(--color-red);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding-top: 0.5rem;
+}
+
+.menu > a {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.menu:hover {
+  background-color: hsl(350, 77%, 36%);
+}
+
+.button {
+  height: 50px;
+  width: 150px;
+  margin-top: 2rem;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--color-red);
+  font-size: 28px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: hsl(350, 77%, 36%);
+}

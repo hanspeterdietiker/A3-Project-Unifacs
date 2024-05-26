@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paladar Apurado - Comentar Restaurante</title>
+        <link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="comentar.css">
+        <script src="comentar.js" defer></script>
+    </head>
+    <body>
+        
+        <div id="principal">
+            <div>
+                <h2>Paladar Apurado</h2>
+                <p>Avalie o Restaurante</p>
+            </div>
+
+            <form id="comentarioForm">
+                <!-- Campo para inserir o ID do restaurante -->
+                <input type="number" id="restauranteId" name="restauranteId" value="INSIRA O ID AQUI" placeholder="ID do Restaurante">
+
+                <!-- Campo para o comentário -->
+                <textarea id="comentario" name="comentario" rows="4" cols="50" placeholder="Digite o seu comentário..."></textarea>
+                
+                <div class="button-container">
+                    <!-- Botão para enviar o comentário -->
+                    <button type="button" onclick="window.location.href = 'principal.html'" class="button">Voltar</button>
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+
+
+        </div>
+    </body>
+</html>

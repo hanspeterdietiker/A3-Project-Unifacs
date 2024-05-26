@@ -1,0 +1,82 @@
+body {
+  background-color: var(--background-body);
+}
+
+h2 {
+  font-family: "Alegreya Sans SC";
+  font-size: 55px;
+  color: var(--color-red);
+}
+
+p {
+  font-size: 25px;
+  margin: 2rem 0 1rem 0;
+}
+
+p,
+.button,
+input[type="submit"] {
+  font-family: "Oxygen";
+  color: #fff;
+}
+
+#principal {
+  padding: 4rem 0;
+  border-radius: 20px;
+  margin: 10em auto;
+  text-align: center;
+  width: 500px;
+  height: 614px;
+  background-color: var(--background-form);
+}
+
+#avaliacaoForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="number"] {
+  width: 350px;
+  height: 55px;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  font-size: 20px;
+}
+
+input[type="submit"] {
+  background-color: var(--color-red);
+  border: none;
+  border-radius: 15px;
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: hsl(350, 77%, 36%);
+}
+
+button {
+  border: none;
+  border-radius: 15px;
+  width: 150px;
+  height: 50px;
+  background-color: var(--color-red);
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: hsl(350, 77%, 36%);
+}
+
+.button-container {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem; /* Espaço entre os botões */
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paladar Apurado - Avaliar Restaurante</title>
+        <link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="avaliar.css">
+        <script src="avaliar.js"></script>
+
+    </head>
+    <body>
+
+        <div id="principal">
+            <div>
+                <h2>Paladar Apurado</h2>
+                <p>Avalie o Restaurante</p>
+            </div>
+
+            <form id="avaliacaoForm">
+                <!-- Campo para inserir o ID do restaurante -->
+                <input type="number" id="restauranteId" name="restauranteId" value="INSIRA O ID AQUI" placeholder="ID do restaurante">
+    
+                <!-- Campo para avaliar comida -->
+                <input type="number" id="comida" name="comida" min="1" max="5" placeholder="Avaliação da Comida (1 a 5)">
+    
+                <!-- Campo para avaliar ambiente -->
+                <input type="number" id="ambiente" name="ambiente" min="1" max="5" placeholder="Avaliação do Ambiente (1 a 5)">
+    
+                <!-- Campo para avaliar serviço -->
+                <input type="number" id="servico" name="servico" min="1" max="5" placeholder="Avaliação de Serviço (1 a 5)">
+                
+                <!-- Botão para enviar a avaliação -->
+                <div class="button-container">
+                    <button type="button" onclick="window.location.href = 'principal.html'" class="button">Voltar</button>
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+
+
+        </div>
+    </body>
+</html>

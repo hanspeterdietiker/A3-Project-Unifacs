@@ -1,0 +1,90 @@
+body {
+  background-color: var(--background-body);
+}
+
+h2 {
+  font-family: "Alegreya Sans SC";
+  font-size: 55px;
+  color: var(--color-red);
+  padding-bottom: 1.5rem;
+}
+
+p {
+  font-size: 25px;
+  padding-bottom: 2rem;
+}
+
+p,
+.button {
+  font-family: "Oxygen";
+  color: #fff;
+}
+
+#principal {
+  padding: 4rem 0;
+  border-radius: 20px;
+  margin: 10em auto;
+  text-align: center;
+  width: 500px;
+  height: 614px;
+  background-color: var(--background-form);
+}
+
+input[type="number"] {
+  width: 350px; /* Aumenta a largura */
+  height: 55px;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
+  font-size: 20px;
+  padding-left: 0.5rem;
+  /* margin-top: ; */
+}
+
+textarea {
+  width: 350px; /* Aumenta a largura */
+  height: 100px; /* Diminui a altura */
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+}
+
+input[type="submit"] {
+  color: #fff;
+  background-color: var(--color-red);
+  font-size: 20px;
+  /* padding-bottom: 0.5rem; */
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: hsl(350, 77%, 36%);
+}
+
+.button {
+  background-color: var(--color-red);
+  border: none;
+  border-radius: 15px;
+  height: 50px;
+  width: 150px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: hsl(350, 77%, 36%);
+}
+
+.button-container > button + input[type="submit"] {
+  margin-left: 1rem;
+}
