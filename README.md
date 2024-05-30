@@ -17,7 +17,7 @@
 - Instale **JavaScript**
 - Instale **Css**
 
-## 🍽 Api do Restaurante :
+## 🍽 Projeto do Restaurante :
 - O sistema deve conter CRUD(adicionar restaurantes, buscar 1 restaurante,
 atualizar restaurante, deletar restaurante[necessária autenticação].
 - No sistema os restaurantes devem apresentar a localização, nome,
@@ -25,6 +25,7 @@ avaliações e comentários.
 - O sistema precisa poder realizar avaliação dos restaurantes, por meio de
 estrelas(1 a 5 estrelas).
 - As avaliações devem ser compostas por comida, ambiente e funcionários.
+- Contem UI (User Interface)
 
 ## 🔍 Front End do Alpha Script:
 - O "Alpha Script" é um aplicativo web projetado para gerenciar e organizar ferramentas de software, destinado a desenvolvedores, engenheiros de qualidade e gerentes de projeto. 
