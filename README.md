@@ -53,12 +53,13 @@ estrelas(1 a 5 estrelas).
 -  <img width="80" height="30" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 -  <img width="80" height="30" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
 -  <img width="80" height="30" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=whit"/>
--  <img width="80" height="30" src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white"/>
--  <img width="120" height="30" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/>
 -  <img width="120" height="30" src="https://img.shields.io/badge/swagger-v3.0-brightgreen?logo=swagger" alt="Swagger"/>
 -  <img src="https://img.shields.io/badge/Spring%20Security-green?style=for-the-badge&logo=springsecurity&logoColor=white" alt="Spring Security" style="background-color: lightgreen"/>
 -  <img src="https://img.shields.io/badge/JSON%20Web%20Token-violet?style=for-the-badge&logo=json-web-tokens&logoColor=white" alt="JSON Web Token" style="background-color: violet"/>
-
+-  <img width="80" height="30" src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white"/>
+-  <img width="120" height="30" src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/>
+-  <img width="100" height="30" src="https://github.com/hanspeterdietiker/A3-Project-Unifacs/assets/126719678/2b766c01-9f85-4002-9370-292fa840bd06"/>
+ 
 ##  🫸 Projetos:
  <a style="float:left" href="https://front-restaurant-five.vercel.app/index.html" target="_blank">
     <img  width="300" height="300" src="https://cdn-icons-png.flaticon.com/512/1046/1046747.png" alt="Menu-icon"/>
