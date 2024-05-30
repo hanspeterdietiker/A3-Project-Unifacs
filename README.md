@@ -17,7 +17,7 @@
 - Instale **JavaScript**
 - Instale **Css**
 
-## 💻 Api do Restaurante :
+## 🍽 Api do Restaurante :
 - O sistema deve conter CRUD(adicionar restaurantes, buscar 1 restaurante,
 atualizar restaurante, deletar restaurante[necessária autenticação].
 - No sistema os restaurantes devem apresentar a localização, nome,
@@ -25,9 +25,16 @@ avaliações e comentários.
 - O sistema precisa poder realizar avaliação dos restaurantes, por meio de
 estrelas(1 a 5 estrelas).
 - As avaliações devem ser compostas por comida, ambiente e funcionários.
-  
+
+## 🔍 Front End do Alpha Script:
+- O "Alpha Script" é um aplicativo web projetado para gerenciar e organizar ferramentas de software, destinado a desenvolvedores, engenheiros de qualidade e gerentes de projeto. 
+- Sua principal funcionalidade é permitir que os usuários busquem e filtrem ferramentas de software específicas por nome e tipo, fornecendo informações detalhadas, como documentação e características das ferramentas.
+ 
 ## 📃 Links do Projeto (Apenas Clicar em cima do Badge):
 - Workflow: [![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)](https://hanspeter.atlassian.net/jira/software/projects/KAN/boards/1)
+- Documentação:<a style="float:left" href="https://a30.gitbook.io/a3projeto" target="_blank">
+    <img width="80" height="30" alt="GitBook - Dark" src="https://github.com/hanspeterdietiker/A3-Project-Unifacs/assets/126719678/2b766c01-9f85-4002-9370-292fa840bd06">
+</a>
   
 ## 📈 WorkFlow:
 - Utilizamos **Metologia Agil - Kanban**
@@ -50,9 +57,6 @@ estrelas(1 a 5 estrelas).
 -  <img width="120" height="30" src="https://img.shields.io/badge/swagger-v3.0-brightgreen?logo=swagger" alt="Swagger"/>
 -  <img src="https://img.shields.io/badge/Spring%20Security-green?style=for-the-badge&logo=springsecurity&logoColor=white" alt="Spring Security" style="background-color: lightgreen"/>
 -  <img src="https://img.shields.io/badge/JSON%20Web%20Token-violet?style=for-the-badge&logo=json-web-tokens&logoColor=white" alt="JSON Web Token" style="background-color: violet"/>
-
-   
-
 
 ##  🫸 Projetos:
  <a style="float:left" href="https://front-restaurant-five.vercel.app/index.html" target="_blank">
