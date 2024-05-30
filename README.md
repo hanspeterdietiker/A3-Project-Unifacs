@@ -34,7 +34,7 @@ estrelas(1 a 5 estrelas).
 ## 📃 Links do Projeto (Apenas Clicar em cima do Badge):
 - Workflow: [![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=Jira&logoColor=white)](https://hanspeter.atlassian.net/jira/software/projects/KAN/boards/1)
 - Documentação:<a style="float:left" href="https://a30.gitbook.io/a3projeto" target="_blank">
-    <img width="100" height="30" alt="GitBook - Dark" src="https://github.com/hanspeterdietiker/A3-Project-Unifacs/assets/126719678/2b766c01-9f85-4002-9370-292fa840bd06">
+    <img width="100" height="30" src="https://github.com/hanspeterdietiker/A3-Project-Unifacs/assets/126719678/2b766c01-9f85-4002-9370-292fa840bd06">
 </a>
   
 ## 📈 WorkFlow:
